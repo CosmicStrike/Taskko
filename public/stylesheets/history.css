@@ -14,6 +14,8 @@ main {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    flex-wrap: wrap;
+    margin: 1rem;
 }
 
 .search-bar {
@@ -52,6 +54,32 @@ main {
     outline: none;
 }
 
+.clear-history {
+    width: 6rem;
+    height: 2rem;
+    padding: 0.2rem;
+    margin: 1rem;
+
+
+    border: 2px solid #C200FF;
+    border-radius: 3px;
+    background-color: white;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+    cursor: pointer;
+    outline: none;
+}
+
+.clear-history:hover {
+    background-color: #C200FF;
+    color: white;
+}
+
 .separator {
     width: 60%;
     height: 3px;
@@ -88,6 +116,20 @@ main {
 
     .search {
         margin: 0.6rem 0rem;
+    }
+
+    .page-name {
+        text-align: center;
+        margin-top: 2rem;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 1.2rem;
+    }
+
+
+    .clear-history {
+        font-size: 1rem;
+        width: 7rem;
+        height: 2.4rem;
     }
 
     #task-category {
