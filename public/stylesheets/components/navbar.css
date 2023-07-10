@@ -1,0 +1,88 @@
+.navbar {
+    position: absolute;
+    z-index: 1;
+    width: 90%;
+    background-color: #f8f8f8;
+    border-right: 1px dotted #C200FF;
+    border-bottom: 1px dotted #C200FF;
+}
+
+.nav-tab {
+    position: relative;
+    cursor: pointer;
+    height: 4rem;
+    padding: 1rem;
+    text-decoration: none;
+    border: 1px dotted #C200FF;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+}
+
+.navbar ul {
+    margin-top: 3rem;
+}
+
+.nav-tab:hover {
+    background-color: #eaaefd;
+    transition: 0.2s;
+    border: 1px dotted #8f00bb;
+}
+
+.nav-arrow {
+    position: absolute;
+    left: 100%;
+    opacity: 0%;
+    bottom: -1px;
+    border-top: 2rem solid transparent;
+    border-left: 2rem solid #eaaefd;
+    border-bottom: 2rem solid transparent;
+}
+
+.nav-tab-selected {
+    background-color: #eaaefd;
+}
+
+.greetings {
+    height: fit-content;
+    padding-top: 1.8rem;
+    text-align: center;
+    font-size: 1rem;
+
+    margin-bottom: 1rem;
+}
+
+.greetings p:first-child {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0.3rem;
+}
+
+@media only screen and (min-width: 1200px) {
+    .navbar {
+        position: sticky;
+        width: 20%;
+        min-height: 94vh;
+        top: 0;
+        align-self: flex-start;
+        border-right: 2px solid #C200FF;
+    }
+
+    .nav-tab {
+        margin: 2rem 0rem;
+        border: none;
+    }
+
+    .nav-tab-selected .nav-arrow {
+        opacity: 100%;
+    }
+
+    .greetings {
+        font-size: 1.2rem;
+        padding-top: 3rem;
+    }
+
+    .greetings p:first-child {
+        font-size: 1.5rem;
+    }
+}
