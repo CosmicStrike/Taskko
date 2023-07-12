@@ -3,8 +3,8 @@ import path from 'path';
 import logger from 'morgan';
 import { fileURLToPath } from 'url';
 import MainRouter from './routes/views/main.js';
-import LoginRouter from './routes/api/login.js';
-import UserRouter from './routes/api/user.js';
+// import LoginRouter from './routes/api/login.js';
+// import UserRouter from './routes/api/user.js';
 
 
 const __filename = fileURLToPath(import.meta.url);
@@ -21,8 +21,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/api/login', LoginRouter);
-app.use('/api/user', UserRouter);
+// app.use('/api/login', LoginRouter);
+// app.use('/api/user', UserRouter);
 app.use('/', MainRouter);
 
 app.use(express.static(__dirname + '/public'));

@@ -58,11 +58,18 @@
     margin: 0.3rem;
 }
 
+.username-separator {
+    width: 60%;
+    height: 3px;
+    margin: 0px auto;
+    background-color: #8f00bb;
+}
+
 @media only screen and (min-width: 1200px) {
     .navbar {
         position: sticky;
         width: 20%;
-        min-height: 94vh;
+        min-height: 92.4vh;
         top: 0;
         align-self: flex-start;
         border-right: 2px solid #C200FF;

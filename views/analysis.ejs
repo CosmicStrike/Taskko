@@ -4,18 +4,41 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <link href="../public/stylesheets/main.css" rel="stylesheets">
+        <title>Taskko</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+        <link rel="stylesheet" href="/stylesheets/analysis.css">
     </head>
 
     <body>
-        <nav>
+        <%- include('./components/header.ejs') %>
+            <div class="page-container">
+                <!-- <%- include('./components/navbar.ejs') %> -->
+                <main>
+                    <h2 class="page-name">Analysis</h2>
+                    <hr class="page-name-separator">
+                    <div class="range">
+                        Task Analysis of :
+                        <select id="timeline">
+                            <option value="All-Time">All Time</option>
+                            <option value="Last-Week">Last Week</option>
+                            <option value="Last-Month">Last Month</option>
+                            <option value="Last-Year">Last Year</option>
+                        </select>
+                    </div>
 
-        </nav>
-        <main>
-
-        </main>
+                    <div class="graph"></div>
+                    <div class="statistic">
+                        <p>Number of tasks completed before/on time : <span
+                                style="color: rgb(0, 220, 0); margin-left: 0.2rem;">12/30</span>
+                        </p>
+                        <p>Number of tasks completed after deadline : <span
+                                style="color: rgb(220, 0, 0); margin-left: 0.2rem;">2/30</span>
+                        </p>
+                        <p>Number of ongoing tasks : <span class="margin-left: 0.2rem;">12/30</span></p>
+                    </div>
+                </main>
+            </div>
     </body>
-    <script src="../public/javascripts/main.js"></script>
+    <script src="/javascripts/analysis.js"></script>
 
 </html>

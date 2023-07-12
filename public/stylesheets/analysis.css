@@ -1,0 +1,147 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+main {
+    width: 100%;
+    height: minmax(100vh, auto);
+}
+
+.page-name {
+    text-align: center;
+    margin-top: 1rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.2rem;
+}
+
+.separator,
+.page-name-separator {
+    width: 6%;
+    height: 3px;
+    margin: 0px auto;
+    background-color: #8f00bb;
+}
+
+.username-separator {
+    width: 60%;
+}
+
+.page-name-separator {
+    width: 20%;
+    height: 4px;
+    margin: 0.2rem auto;
+}
+
+.range {
+    font-size: 1rem;
+    margin: 1rem 1rem;
+    font-weight: 700;
+}
+
+#timeline {
+    width: 6.4rem;
+    height: 2rem;
+    flex-shrink: 0;
+
+    border-radius: 3px;
+    background-color: #f8f8f8;
+    padding: 0.2rem;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+    outline: none;
+}
+
+.graph {
+    width: 80%;
+    height: 16rem;
+    margin: 2rem auto;
+    border-radius: 0.2rem;
+    box-shadow: 0px 1px 6px rgb(184, 184, 184);
+    background-color: #b8b8b8;
+}
+
+.statistic {
+    margin: 1rem 1rem;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.statistic p {
+    margin: 1rem 0rem;
+}
+
+.hide {
+    display: none;
+}
+
+@media only screen and (min-width: 1200px) {
+    main {
+        width: 60%;
+        margin: 0rem 2rem;
+    }
+
+    .page-name {
+        text-align: center;
+        margin-top: 2rem;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 1.2rem;
+    }
+
+    .page-container {
+        display: flex;
+    }
+
+    .separator {
+        width: 60%;
+        height: 3px;
+        margin: 0px auto;
+        background-color: #8f00bb;
+    }
+
+    .range {
+        font-size: 1.2rem;
+        margin: 1rem 3rem;
+        font-weight: 700;
+    }
+
+    #timeline {
+        width: 6.4rem;
+        height: 2rem;
+        flex-shrink: 0;
+
+        border-radius: 3px;
+        background-color: #f8f8f8;
+        padding: 0.2rem;
+
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 0.8rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+
+        outline: none;
+    }
+
+    .graph {
+        width: 60%;
+        height: 60%;
+        margin: 2rem auto;
+        border-radius: 0.2rem;
+        box-shadow: 0px 1px 6px rgb(184, 184, 184);
+        background-color: #a2a2a2;
+    }
+
+    .statistic {
+        margin: 1rem 3rem;
+        font-size: 1.2rem;
+        font-weight: 700;
+    }
+
+}

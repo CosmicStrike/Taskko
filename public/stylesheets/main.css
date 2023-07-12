@@ -52,11 +52,22 @@ main {
     outline: none;
 }
 
-.separator {
-    width: 60%;
+.separator,
+.page-name-separator {
+    width: 6%;
     height: 3px;
     margin: 0px auto;
     background-color: #8f00bb;
+}
+
+.username-separator {
+    width: 60%;
+}
+
+.page-name-separator {
+    width: 20%;
+    height: 4px;
+    margin: 0.2rem auto;
 }
 
 /* Task Container */
