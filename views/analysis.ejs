@@ -7,14 +7,15 @@
         <title>Taskko</title>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
         <link rel="stylesheet" href="/stylesheets/analysis.css">
+        <link rel="stylesheet" href="/stylesheets/components/login.css">
     </head>
 
     <body>
         <%- include('./components/header.ejs') %>
             <div class="page-container">
                 <!-- <%- include('./components/navbar.ejs') %> -->
-                <main>
-                    <h2 class="page-name">Analysis</h2>
+                    <main>
+                        <!-- <h2 class="page-name">Analysis</h2>
                     <hr class="page-name-separator">
                     <div class="range">
                         Task Analysis of :
@@ -35,8 +36,26 @@
                                 style="color: rgb(220, 0, 0); margin-left: 0.2rem;">2/30</span>
                         </p>
                         <p>Number of ongoing tasks : <span class="margin-left: 0.2rem;">12/30</span></p>
-                    </div>
-                </main>
+                    </div> -->
+
+                        <div class="login-container">
+                            <p class="component-title">Login</p>
+                            <form class="login-form">
+
+                                <input class="login-field" type="text" placeholder="Username" name="username">
+                                <p class="error-message"></p>
+
+                                <input class="login-field" type="password" placeholder="Password" name="password">
+                                <span class="error-message"></span>
+
+                                <input class="login-button" type="submit" value="Login">
+                                <div class="login-footer">
+                                    <a style="cursor: pointer;">Forgot Password?</a>
+                                    <a style="color: #C200FF;cursor: pointer; font-weight: bold;">Sign Up</a>
+                                </div>
+                            </form>
+                        </div>
+                    </main>
             </div>
     </body>
     <script src="/javascripts/analysis.js"></script>

@@ -4,6 +4,10 @@
     padding: 0px;
 }
 
+body {
+    height: minmax(100vh, auto);
+}
+
 main {
     width: 100%;
     height: minmax(100vh, auto);
