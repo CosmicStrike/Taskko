@@ -1,0 +1,59 @@
+.message-container {
+    position: absolute;
+    z-index: 99;
+    top: 10%;
+    left: 7%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 86%;
+    height: fit-content;
+    padding: 0.8rem 0rem;
+    margin: 0rem auto;
+    margin-top: 50%;
+
+    background-color: #f8f8f8;
+
+    border-radius: 4px;
+    border-top: 3px solid #C200FF;
+    border-right: 2px solid #C200FF;
+    border-bottom: 3px solid #C200FF;
+    border-left: 2px solid #C200FF;
+
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.message {
+    padding: 1rem;
+    min-height: 5rem;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.message-button {
+    width: 9rem;
+    height: 2.2rem;
+    flex-shrink: 0;
+
+    background-color: #C200FF;
+    color: #FFFFFF;
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 0.4rem;
+    border: none;
+
+    cursor: pointer;
+}
+
+.message-button:hover {
+    background-color: #d13aff;
+}
+
+@media only screen and (min-width: 1200px) {
+    .message-container {
+        width: 50%;
+        margin-top: 10%;
+    }
+}
