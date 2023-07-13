@@ -1,21 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="../public/stylesheets/main.css" rel="stylesheets">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Taskko</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+        <link rel="stylesheet" href="/stylesheets/services.css">
+    </head>
 
-<body>
-    <nav>
+    <body>
+        <%- include('./components/header.ejs') %>
 
-    </nav>
-    <main>
+            <div class="page-container">
+                <!-- <%- include('./components/navbar.ejs') %> -->
+                <main>
+                    <h2 class="page-name">Services</h2>
+                    <hr class="page-name-separator">
+                    <div class="service-container">
+                        <div>
+                            <p class="page-title">Registered Emails : </p>
+                            <div class="registered-emails">
+                                <p>example1@gmail.com</p>
+                            </div>
+                        </div>
 
-    </main>
-</body>
-<script src="../public/javascripts/main.js"></script>
+                        <div>
+                            <form class="email-register-form">
+                                <input class="email-register-field" type="email" name="email"
+                                    placeholder="example1@gmail.com">
+                                <input class="email-register-button" type="submit" name="register" value="Register">
+                            </form>
+                        </div>
+
+                        <hr class="username-separator">
+
+                        <div class="Reminder-Section">
+                            <p class="section-title">Reminders :</p>
+                            <p class="section-description">We provide the remainders to you through your registered
+                                emails so that you can complete your task on
+                                time.</p>
+                            <table style="margin: 1rem auto;">
+                                <tr>
+                                    <th class="email-header">Emails</th>
+                                    <th>Category</th>
+                                    <th></th>
+                                </tr>
+                                <tr>
+                                    <td>example1@gmail.com</td>
+                                    <td>
+                                        <select id="register-email-category">
+                                            <option value="None">None</option>
+                                            <option value="All">All</option>
+                                            <option value="Work">Work</option>
+                                            <option value="Personal">Personal</option>
+                                        </select>
+                                    </td>
+
+                                    <td><button class="save-button">Save</button></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                </main>
+            </div>
+    </body>
+    <script src="/javascripts/services.js"></script>
 
 </html>

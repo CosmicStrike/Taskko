@@ -1,0 +1,227 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+main {
+    width: 100%;
+    height: minmax(100vh, auto);
+}
+
+.page-name {
+    text-align: center;
+    margin-top: 1rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.2rem;
+}
+
+.separator,
+.page-name-separator {
+    width: 6%;
+    height: 3px;
+    margin: 0px auto;
+    background-color: #8f00bb;
+}
+
+.username-separator {
+    width: 60%;
+    margin: 0rem auto;
+}
+
+.page-name-separator {
+    width: 20%;
+    height: 4px;
+    margin: 0.2rem auto;
+}
+
+.service-container {
+    width: 90%;
+    height: fit-content;
+    margin: 2rem auto;
+}
+
+.registered-emails {
+    width: 90%;
+    min-height: 2.6rem;
+    padding: 0.6rem;
+    margin: 0.4rem auto;
+    background-color: #eeeeee;
+
+    color: rgba(0, 0, 0);
+    font-size: 1rem;
+}
+
+.page-title {
+    font-weight: 700;
+    padding-bottom: 0.2rem;
+}
+
+.email-register-form {
+    display: flex;
+    justify-content: space-between;
+
+    width: 90%;
+    margin: 0rem auto;
+    margin-top: 2.4rem;
+}
+
+.email-register-field {
+    width: 68%;
+    height: 2rem;
+    padding: 0.2rem;
+
+    outline: none;
+    text-decoration: none;
+
+    border: 1px solid black;
+    background-color: #f1f1f1;
+
+}
+
+.email-register-button {
+    width: 6rem;
+    height: 2rem;
+    margin-bottom: 12%;
+    flex-shrink: 0;
+
+    background-color: #C200FF;
+    color: #FFFFFF;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0.2rem;
+    border: none;
+
+    cursor: pointer;
+}
+
+.Reminder-Section {
+    width: 100%;
+    height: fit-content;
+    padding: 0.6rem 0rem;
+    margin: 1rem auto;
+}
+
+.section-title {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.section-description {
+    width: 98%;
+    height: fit-content;
+    font-size: 0.9rem;
+    padding: 0.2rem 0rem;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th {
+    text-align: center;
+    padding: 0.4rem;
+    border-bottom: 1px dotted black;
+}
+
+td {
+    padding: 0.8rem;
+}
+
+.email-header {
+    width: 50%;
+}
+
+#register-email-category {
+    outline: none;
+    text-decoration: none;
+    padding: 0.3rem;
+}
+
+.save-button {
+    width: 4rem;
+    height: 1.6rem;
+    background-color: #C200FF;
+    border: 1px solid #C200FF;
+    color: white;
+    cursor: pointer;
+}
+
+.email-register-button:hover,
+.save-button:hover {
+    background-color: #d13aff;
+}
+
+
+.hide {
+    display: none;
+}
+
+@media only screen and (min-width: 1200px) {
+    main {
+        width: 60%;
+        margin: 0rem 2rem;
+    }
+
+    .page-name {
+        text-align: center;
+        margin-top: 2rem;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 1.2rem;
+    }
+
+    .page-container {
+        display: flex;
+    }
+
+    .separator {
+        width: 60%;
+        height: 3px;
+        margin: 0px auto;
+        background-color: #8f00bb;
+    }
+
+    .service-container {
+        width: 90%;
+        height: fit-content;
+        margin: 1rem 3rem;
+    }
+
+    .page-title {
+        font-size: 1.2rem;
+    }
+
+    .section-title {
+        font-size: 1.2rem;
+    }
+
+    .section-description {
+        font-size: 1rem;
+    }
+
+    .email-register-button {
+        width: 7rem;
+        height: 2rem;
+    }
+
+    table {
+        width: 80%;
+    }
+
+    td,
+    th {
+        font-size: 1rem;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .email-header {
+        width: 50%;
+    }
+
+    .save-button {
+        width: 6rem;
+        height: 1.6rem;
+    }
+
+}

@@ -13,24 +13,24 @@
   <body>
     <%- include('./components/header.ejs') %>
       <div class="page-container">
-        <%- include('./components/navbar.ejs') %>
-          <main>
-            <section class="search">
-              <input class="search-bar" type="text" name="search-task" placeholder="Search">
-              <select id="task-category">
-                <option value="All">All</option>
-                <option value="Work">Work</option>
-                <option value="Personal">Personal</option>
-              </select>
-            </section>
+        <!-- <%- include('./components/navbar.ejs') %> -->
+        <main>
+          <section class="search">
+            <input class="search-bar" type="text" name="search-task" placeholder="Search">
+            <select id="task-category">
+              <option value="All">All</option>
+              <option value="Work">Work</option>
+              <option value="Personal">Personal</option>
+            </select>
+          </section>
 
-            <hr class="separator">
+          <hr class="separator">
 
-            <div class="task-container">
-              <%- include('./components/taskcard.ejs') %>
-            </div>
+          <div class="task-container">
+            <%- include('./components/taskcard.ejs') %>
+          </div>
 
-          </main>
+        </main>
       </div>
   </body>
   <script src="/javascripts/main.js"></script>

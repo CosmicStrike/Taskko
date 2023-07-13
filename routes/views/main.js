@@ -13,4 +13,8 @@ MainRouter.get('/analysis', (req, res) => {
     return res.render('analysis.ejs');
 });
 
+MainRouter.get('/services', (req, res) => {
+    return res.render('services.ejs');
+});
+
 export default MainRouter;
