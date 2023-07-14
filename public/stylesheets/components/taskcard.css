@@ -28,6 +28,10 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+.part-1 {
+    cursor: pointer;
+}
+
 .label-arrow {
     position: absolute;
     left: 4.1rem;
@@ -141,6 +145,8 @@
     font-size: 0.8rem;
     font-weight: bold;
 }
+
+
 
 
 

@@ -1,8 +1,11 @@
 header {
+    position: sticky;
+    top: 0px;
+    z-index: 9;
     width: 100%;
     height: 3.2rem;
     border-bottom: 0.15rem solid #C200FF;
-
+    background-color: white;
     display: flex;
     align-items: center;
     justify-content: center;

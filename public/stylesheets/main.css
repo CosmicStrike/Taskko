@@ -34,7 +34,8 @@ main {
     outline-style: none;
 }
 
-#task-category {
+#task-category,
+#create-task-cateogry {
     width: 5.4rem;
     height: 2rem;
     flex-shrink: 0;
@@ -83,6 +84,126 @@ main {
 
 }
 
+.add-task {
+    position: fixed;
+    z-index: 10;
+    top: 88%;
+    width: 3.8rem;
+    height: 3.8rem;
+    margin-left: 76%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #a400d6;
+    border-radius: 50%;
+
+    cursor: pointer;
+
+}
+
+.add-task:hover {
+    background-color: #C200FF;
+}
+
+.add-button {
+    font-size: 2.6rem;
+    color: white;
+}
+
+.create-task {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: fit-content;
+    margin: 1rem auto;
+    font-weight: bold;
+    z-index: 5;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background: linear-gradient(to bottom right,
+            rgba(245, 245, 245, 0.99) 10%,
+            rgba(230, 230, 230, 0.89));
+    border-radius: 0.4rem;
+}
+
+.create-task-header {
+    font-size: 1.4rem;
+    font-weight: bolder;
+    margin-top: 0.2rem;
+    margin-bottom: 0.8rem;
+}
+
+.create-task-field,
+.create-task-textarea {
+    width: 90%;
+    height: 2.4rem;
+    padding: 0.4rem;
+    margin: 0.4rem;
+
+    outline: none;
+    border: none;
+
+    background-color: #ffffffbf;
+    font-size: 0.9rem;
+
+    box-shadow: 0px 3px 2px #b5b5b56f;
+
+}
+
+.create-task-textarea {
+    height: 6rem;
+    resize: none;
+}
+
+
+.create-task-close {
+    align-self: flex-end;
+    margin: 0.6rem;
+}
+
+.task-deadline {
+    align-self: flex-start;
+    margin: 0.5rem 1rem;
+    font-size: 0.8rem;
+    border: none;
+    outline: none;
+}
+
+#create-task-category {
+    align-self: flex-start;
+    margin: 0.5rem 1rem;
+    font-size: 0.8rem;
+    border: none;
+    outline: none;
+}
+
+.task-create-button {
+    width: 6rem;
+    height: 2rem;
+    border: none;
+    background-color: #f6f6f6;
+    border: 2px solid #C200FF;
+    border-radius: 0.4rem;
+    color: #C200FF;
+    font-weight: bold;
+    font-size: 0.9rem;
+    padding: 0.4rem;
+    margin: 1rem 0.5rem;
+    cursor: pointer;
+    box-shadow: 0px 3px 3px rgb(209, 209, 209);
+}
+
+.task-create-button:hover {
+    background-color: #C200FF;
+    color: white;
+}
+
 .hide {
     display: none;
 }
@@ -111,5 +232,11 @@ main {
         font-size: 1rem;
         height: 2.4rem;
         margin: 0rem 0.2em;
+    }
+
+    .add-task {
+        width: 4rem;
+        height: 4rem;
+        margin-left: 62%;
     }
 }

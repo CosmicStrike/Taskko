@@ -15,52 +15,52 @@
 
             <div class="page-container">
                 <!-- <%- include('./components/navbar.ejs') %> -->
-                    <main>
-                        <h2 class="page-name">History</h2>
-                        <hr class="page-name-separator">
+                <main>
+                    <h2 class="page-name">History</h2>
+                    <hr class="page-name-separator">
 
-                        <section class="search">
-                            <input class="search-bar" type="text" name="search-task" placeholder="Search">
-                            <select id="task-category">
-                                <option value="All">All</option>
-                                <option value="Work">Work</option>
-                                <option value="Personal">Personal</option>
-                            </select>
-                            <button class="clear-history">Clear History</button>
-                        </section>
-                        <hr class="separator">
+                    <section class="search">
+                        <input class="search-bar" type="text" name="search-task" placeholder="Search">
+                        <select id="task-category">
+                            <option value="All">All</option>
+                            <option value="Work">Work</option>
+                            <option value="Personal">Personal</option>
+                        </select>
+                        <button class="clear-history">Clear History</button>
+                    </section>
+                    <hr class="separator">
 
-                        <div class="task-container">
-                            <div class="task">
-                                <div class="task-front">
-                                    <div class="part-1">
-                                        <div class="task-label">
-                                            Work
-                                            <span class="label-arrow"></span>
-                                        </div>
-                                        <div class="sr-no">
-                                            1
-                                        </div>
+                    <div class="task-container">
+                        <div class="task">
+                            <div class="task-front">
+                                <div class="part-1">
+                                    <div class="task-label">
+                                        Work
+                                        <span class="label-arrow"></span>
                                     </div>
-                                    <div class="part-2">
-                                        <div class="title">
-                                            Do the homework
-                                        </div>
-                                        <div class="dates">
-                                            <span>Created on: 20/3/32</span>
-                                            <span>Deadline: 30/3/23</span>
-                                        </div>
-                                    </div>
-                                    <div class="part-3">
-                                        <button class="task-delete">
-                                            <span class="material-symbols-outlined">
-                                                delete
-                                            </span>
-                                        </button>
+                                    <div class="sr-no">
+                                        1
                                     </div>
                                 </div>
+                                <div class="part-2">
+                                    <div class="title">
+                                        Do the homework
+                                    </div>
+                                    <div class="dates">
+                                        <span>Created on: 20/3/32</span>
+                                        <span>Deadline: 30/3/23</span>
+                                    </div>
+                                </div>
+                                <div class="part-3">
+                                    <button class="task-delete">
+                                        <span class="material-symbols-outlined">
+                                            delete
+                                        </span>
+                                    </button>
+                                </div>
                             </div>
-                    </main>
+                        </div>
+                </main>
             </div>
     </body>
     <script src="/javascripts/history.js"></script>
