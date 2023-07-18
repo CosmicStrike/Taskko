@@ -17,4 +17,8 @@ MainRouter.get('/services', (req, res) => {
     return res.render('services.ejs');
 });
 
+MainRouter.get('/reset', (req, res) => {
+    return res.render('resetPassword.ejs');
+})
+
 export default MainRouter;
