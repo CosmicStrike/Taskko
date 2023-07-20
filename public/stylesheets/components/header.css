@@ -11,6 +11,10 @@ header {
     justify-content: center;
 }
 
+#menu {
+    cursor: pointer;
+}
+
 .hamburger {
     background-color: #C200FF;
     color: white;
@@ -25,6 +29,7 @@ header {
 
     justify-items: flex-start;
 }
+
 
 .display-mode {
     outline: none;
@@ -58,7 +63,7 @@ header {
         height: 3.625rem;
     }
 
-    .hamburger {
+    #menu {
         display: none;
     }
 }
