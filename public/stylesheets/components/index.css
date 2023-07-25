@@ -1,0 +1,48 @@
+.index {
+    width: 90%;
+    height: 16rem;
+    margin: 30% auto;
+    padding: 0.8rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+    background-color: #f8f8f8;
+    text-align: center;
+    border-left: 2px solid #C200FF;
+    border-right: 2px solid #C200FF;
+}
+
+.index h1 {
+    margin-top: 2rem;
+    margin-bottom: 1.2rem;
+}
+
+.index p {
+    margin: 0.8rem 0rem;
+}
+
+.LoginButton {
+    width: 40%;
+    height: 2.4rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+
+    border: 3px solid #C200FF;
+    border-radius: 0.4rem;
+    background-color: white;
+    color: #C200FF;
+}
+
+.LoginButton:hover {
+    background-color: #C200FF;
+    color: white;
+}
+
+@media only screen and (min-width: 1200px) {
+    .index {
+        margin: 10% auto;
+    }
+
+    .LoginButton {
+        width: 20%;
+    }
+}
