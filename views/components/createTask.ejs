@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="/stylesheets/components/createTask.css">
-<form class="create-task">
+<form class="create-task hide">
 
     <div class="create-task-close"><span class="material-symbols-outlined" style="cursor: pointer;">
             close
@@ -18,6 +18,9 @@
             <option value="Work">Work</option>
         </select>
     </label>
-
-    <input class="task-create-button" type="submit" name="add-task" value="Add">
+    <div>
+        <input class="task-create-button" type="submit" name="add-task" value="Add">
+        <button type="button" class="task-create-button" style="border:none;" onclick="Reset()">Reset</button>
+    </div>
 </form>
+<script src="/javascripts/components/createTask.js"></script>
