@@ -18,6 +18,8 @@ function OnClick(e) {
     let navbar = document.getElementsByTagName('nav')[0];
     if (!navbar.contains(e.target) && !menu.contains(e.target) && !desktop.matches) {
         navbar.classList.add('hide');
+        document.getElementsByClassName('close')[0].classList.add('hide');
+        document.getElementsByClassName('open')[0].classList.remove('hide');
     }
 }
 

@@ -125,30 +125,40 @@ th {
 }
 
 td {
-    padding: 0.8rem;
+    padding: 0.5rem;
 }
 
 .email-header {
     width: 50%;
 }
 
+.email-content {
+    max-width: 2rem;
+    overflow-x: auto;
+    text-overflow: clip;
+}
+
 #register-email-category {
     outline: none;
     text-decoration: none;
-    padding: 0.3rem;
+    padding: 0.1rem;
 }
 
 .save-button {
     width: 4rem;
     height: 1.6rem;
-    background-color: #C200FF;
     border: 1px solid #C200FF;
-    color: white;
+    background-color: white;
+    color: #C200FF;
     cursor: pointer;
 }
 
-.email-register-button:hover,
+.email-register-button:hover {
+    background-color: #d13aff;
+}
+
 .save-button:hover {
+    color: white;
     background-color: #d13aff;
 }
 

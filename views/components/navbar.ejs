@@ -2,29 +2,32 @@
 <nav class="navbar">
     <div class="greetings">
         <p>Welcome</p>
-        <p>Username</p>
+        <% if(auth){ %>
+            <p>Username</p>
+            <% }else{ %>
+                <p>Guest</p>
+                <% } %>
+
     </div>
     <hr class="username-separator">
     <ul>
         <li class="nav-tab">
             <a href="/">Tasks</a>
-            <span class="nav-arrow"></span>
 
         </li>
         <li class="nav-tab">
             <a href="/analysis">Analysis</a>
-            <span class="nav-arrow"></span>
         </li>
         <li class="nav-tab">
             <a href="/services">Services</a>
-            <span class="nav-arrow"></span>
 
         </li>
         <li class="nav-tab">
             <a href="/history">History</a>
-            <span class="nav-arrow"></span>
         </li>
-        <li class="nav-tab">Logout</li>
+        <% if(auth){ %>
+            <li class="nav-tab">Logout</li>
+            <% } %>
     </ul>
 </nav>
 <script src="/javascripts/components/navbar.js"></script>

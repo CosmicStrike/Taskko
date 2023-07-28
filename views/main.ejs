@@ -15,36 +15,42 @@
       <div class="page-container">
         <%- include('./components/navbar.ejs') %>
           <main>
-            <section class="search">
-              <input class="search-bar" type="text" name="search-task" placeholder="Search">
-              <select id="task-category">
-                <option value="All">All</option>
-                <option value="Work">Work</option>
-                <option value="Personal">Personal</option>
-              </select>
-            </section>
+            <% if(auth){ %>
+              <section class="search">
+                <input class="search-bar" type="text" name="search-task" placeholder="Search">
+                <select id="task-category">
+                  <option value="All">All</option>
+                  <option value="Work">Work</option>
+                  <option value="Personal">Personal</option>
+                </select>
+              </section>
 
-            <hr class="separator">
+              <hr class="separator">
 
 
-            <div class="task-container">
-              <%- include('./components/taskcard.ejs') %>
+              <div class="task-container">
                 <%- include('./components/taskcard.ejs') %>
-            </div>
-
-            <%- include('./components/createTask.ejs') %>
-
-              <div class="add-task">
-                <span class="material-symbols-outlined add-button">
-                  add
-                </span>
+                  <%- include('./components/taskcard.ejs') %>
               </div>
+
+              <%- include('./components/createTask.ejs') %>
+
+                <div class="add-task">
+                  <span class="material-symbols-outlined add-button">
+                    add
+                  </span>
+                </div>
+                <% }else { %>
+                  <%- include('./components/index.ejs') %>
+
+                    <% } %>
+
 
           </main>
       </div>
   </body>
   <script src="/javascripts/main.js"></script>
   <script src="/javascripts/base.js"></script>
-  <script src="javascripts/taskcard.js"></script>
+  <script src="/javascripts/components/taskcard.js"></script>
 
 </html>

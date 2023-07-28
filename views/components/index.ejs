@@ -1,8 +1,12 @@
 <link rel="stylesheet" href="/stylesheets/components/index.css">
-<div class="index">
-    <h1>Greetings..</h1>
-    <h3>Have lots of tasks in hand?</h3>
-    <h3>Difficulty in covering deadlines?</h3>
-    <p>You have come to right place!</p>
-    <button class="LoginButton">Get Started</button>
-</div>
+<%- include('./login.ejs') %>
+    <%- include('./signup.ejs') %>
+        <%- include('./forgotPassword.ejs') %>
+            <div class="index">
+                <h1>Greetings..</h1>
+                <h3>Have lots of tasks in hand?</h3>
+                <h3>Difficulty in covering deadlines?</h3>
+                <p>You have come to right place!</p>
+                <button id="get-started" class="LoginButton">Get Started</button>
+            </div>
+            <script src="/javascripts/components/index.js"></script>

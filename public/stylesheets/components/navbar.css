@@ -36,20 +36,6 @@
     border: 1px dotted #8f00bb;
 }
 
-.nav-arrow {
-    position: absolute;
-    left: 100%;
-    opacity: 0%;
-    bottom: -1px;
-    border-top: 2rem solid transparent;
-    border-left: 2rem solid #eaaefd;
-    border-bottom: 2rem solid transparent;
-}
-
-.nav-tab-selected {
-    background-color: #eaaefd;
-}
-
 .greetings {
     height: fit-content;
     padding-top: 1.8rem;
@@ -76,7 +62,7 @@
     .navbar {
         position: sticky;
         width: 20%;
-        min-height: 92.4vh;
+        min-height: 92.3vh;
         top: 3.625rem;
         align-self: flex-start;
         border-right: 2px solid #C200FF;

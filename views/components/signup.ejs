@@ -1,7 +1,7 @@
-<link rel="stylesheet" href="/stylesheets/compenents/login.css">
-<div class="login-container">
+<link rel="stylesheet" href="/stylesheets/components/login.css">
+<dialog class="login-container signup-container">
     <p class="component-title">Sign Up</p>
-    <form class="login-form">
+    <form id="signup" class="login-form">
 
         <input class="login-field" type="text" placeholder="Username" name="username">
         <p class="error-message"></p>
@@ -16,8 +16,9 @@
         <span class="error-message"></span>
 
         <input class="login-button" type="submit" value="Sign Up">
-        <div class="login-footer">
-            <a style="color: #C200FF;cursor: pointer; font-weight: bold;">Back</a>
-        </div>
+
+        <button type="button" style="width: 20%;" class="login-footer back">
+            Back
+        </button>
     </form>
-</div>
+</dialog>
