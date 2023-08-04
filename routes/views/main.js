@@ -2,7 +2,7 @@ import { Router } from "express";
 const MainRouter = Router();
 
 MainRouter.get('/', (req, res) => {
-    return res.render('main.ejs', { auth: false });
+    return res.render('main.ejs', { auth: true });
 });
 
 MainRouter.get('/history', (req, res) => {

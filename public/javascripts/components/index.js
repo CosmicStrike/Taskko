@@ -5,7 +5,6 @@ function Index() {
         login.showModal();
     });
 }
-console.log(document.readyState)
 
 if (document.readyState === 'complete')
     Index();

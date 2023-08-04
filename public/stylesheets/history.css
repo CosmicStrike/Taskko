@@ -32,9 +32,10 @@ main {
     flex-shrink: 0;
 
     border-radius: 3px;
-    background-color: #f8f8f8;
+    border: 1px solid var(--overlay-4);
+    background-color: var(--overlay-0);
     padding: 0.2rem;
-    color: #000000;
+    color: var(--sub-text-color);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1rem;
     font-style: normal;
@@ -50,9 +51,10 @@ main {
     flex-shrink: 0;
 
     border-radius: 3px;
-    background-color: #f8f8f8;
+    border: 1px solid var(--overlay-5);
+    background-color: var(--overlay-0);
     padding: 0.2rem;
-
+    color: var(--sub-text-color);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 0.8rem;
     font-style: normal;
@@ -69,9 +71,9 @@ main {
     margin: 1rem;
 
 
-    border: 2px solid #C200FF;
+    border: 1px solid var(--secondary-color);
     border-radius: 3px;
-    background-color: white;
+    background-color: var(--overlay-0);
 
     font-family: Arial, Helvetica, sans-serif;
     font-size: 0.8rem;
@@ -84,8 +86,8 @@ main {
 }
 
 .clear-history:hover {
-    background-color: #C200FF;
-    color: white;
+    background-color: var(--secondary-color);
+    color: #f2f2f2;
 }
 
 .separator,
@@ -94,6 +96,7 @@ main {
     height: 3px;
     margin: 0px auto;
     background-color: #8f00bb;
+    border: none;
 }
 
 .username-separator {
@@ -102,7 +105,7 @@ main {
 
 .page-name-separator {
     width: 20%;
-    height: 4px;
+    height: 3px;
     margin: 0.2rem auto;
 }
 
@@ -116,6 +119,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 
 }
 

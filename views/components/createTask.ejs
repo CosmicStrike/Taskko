@@ -1,26 +1,29 @@
 <link rel="stylesheet" href="/stylesheets/components/createTask.css">
-<form class="create-task hide">
+<dialog id="create-task-dialog">
+    <form class="create-task">
 
-    <div class="create-task-close"><span class="material-symbols-outlined" style="cursor: pointer;">
-            close
-        </span></div>
+        <div class="create-task-close"><span class="material-symbols-outlined" style="cursor: pointer;">
+                close
+            </span></div>
 
-    <p class="create-task-header">Add Task</p>
-    <input class="create-task-field" type="text" name="task-title" placeholder="Title" maxlength="75">
-    <textarea class="create-task-textarea" type="text" name="task-description" maxlength="150"
-        placeholder="Description (optional)"></textarea>
+        <p class="create-task-header">Add Task</p>
+        <input class="create-task-field" type="text" name="task-title" placeholder="Title" maxlength="75">
+        <textarea class="create-task-textarea" type="text" name="task-description" maxlength="150"
+            placeholder="Description (optional)"></textarea>
 
-    <label class="task-deadline" for="task-deadline">Deadline : <input type="date" name="task-deadline"
-            style="width: 8rem; height: 1.8rem;"></label>
-    <label id="create-task-category">Task Cateogry :
-        <select style="width: 5.6rem; height: 1.8rem; padding: 0.2rem;">
-            <option value="Personal">Personal</option>
-            <option value="Work">Work</option>
-        </select>
-    </label>
-    <div>
-        <input class="task-create-button" type="submit" name="add-task" value="Add">
-        <button type="button" class="task-create-button" style="border:none;" onclick="Reset()">Reset</button>
-    </div>
-</form>
+        <label class="task-deadline" for="task-deadline">Deadline : <input type="date" name="task-deadline"
+                style="width: 8rem; height: 1.8rem;"></label>
+        <label id="create-task-category">Task Cateogry :
+            <select style="width: 5.6rem; height: 1.8rem; padding: 0.2rem;">
+                <option value="Personal">Personal</option>
+                <option value="Work">Work</option>
+            </select>
+        </label>
+        <div>
+            <input class="task-create-button" type="submit" name="add-task" value="Add">
+            <button type="button" class="task-create-button" style="border:none;" onclick="Reset()">Reset</button>
+        </div>
+    </form>
+</dialog>
+
 <script src="/javascripts/components/createTask.js"></script>

@@ -1,11 +1,20 @@
+:root[data-theme='light'] {
+    --navbar-bg: #f1f1f1;
+}
+
+:root[data-theme='dark'] {
+    --navbar-bg: #222222;
+}
+
+
 .navbar {
     position: fixed;
     z-index: 8;
-    width: 90%;
-    background-color: #f8f8f8;
-    border-right: 1px dotted #C200FF;
-    border-bottom: 1px dotted #C200FF;
+    width: 100%;
+    background-color: var(--navbar-bg);
+    border-bottom: 1px dotted var(--secondary-color);
     top: 3.2rem;
+
 }
 
 .nav-tab {
@@ -15,15 +24,15 @@
     width: 100%;
     padding: 1rem;
     text-decoration: none;
-    border: 1px dotted #C200FF;
     font-size: 1.2rem;
     font-weight: bold;
+    border-bottom: 1px solid var(--secondary-color);
     font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
 }
 
 .nav-tab a {
     text-decoration: none;
-    color: black;
+    color: var(--text-color);
 }
 
 .navbar ul {
@@ -31,9 +40,8 @@
 }
 
 .nav-tab:hover {
-    background-color: #eaaefd;
+    background-color: var(--bg-hover);
     transition: 0.2s;
-    border: 1px dotted #8f00bb;
 }
 
 .greetings {
@@ -41,7 +49,7 @@
     padding-top: 1.8rem;
     text-align: center;
     font-size: 1rem;
-
+    color: var(--text-color);
     margin-bottom: 1rem;
 }
 
@@ -65,7 +73,8 @@
         min-height: 92.3vh;
         top: 3.625rem;
         align-self: flex-start;
-        border-right: 2px solid #C200FF;
+        border-right: 2px solid var(--secondary-color);
+        background-color: var(--bg);
     }
 
     .nav-tab {
@@ -75,7 +84,7 @@
 
     .nav-tab a {
         text-decoration: none;
-        color: black;
+        color: var(--text-color);
     }
 
     .nav-tab-selected .nav-arrow {

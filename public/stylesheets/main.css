@@ -4,6 +4,10 @@
     padding: 0px;
 }
 
+body {
+    background-color: var(--bg);
+}
+
 main {
     width: 100%;
     height: minmax(100vh, auto);
@@ -22,9 +26,10 @@ main {
     flex-shrink: 0;
 
     border-radius: 3px;
-    background-color: #f8f8f8;
+    border: 1px solid var(--overlay-4);
+    background-color: var(--overlay-0);
     padding: 0.2rem;
-    color: #000000;
+    color: var(--sub-text-color);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1rem;
     font-style: normal;
@@ -41,8 +46,10 @@ main {
     flex-shrink: 0;
 
     border-radius: 3px;
-    background-color: #f8f8f8;
+    border: 1px solid var(--overlay-5);
+    background-color: var(--overlay-0);
     padding: 0.2rem;
+    color: var(--sub-text-color);
 
     font-family: Arial, Helvetica, sans-serif;
     font-size: 0.8rem;
@@ -59,10 +66,12 @@ main {
     height: 3px;
     margin: 0px auto;
     background-color: #8f00bb;
+    border: none;
 }
 
 .username-separator {
     width: 60%;
+    border: none;
 }
 
 .page-name-separator {
@@ -104,7 +113,7 @@ main {
 }
 
 .add-task:hover {
-    background-color: #C200FF;
+    background-color: var(--secondary-color);
 }
 
 .add-button {
@@ -121,6 +130,7 @@ main {
     main {
         width: 60%;
         margin: 0rem 2rem;
+        border-radius: 10px;
     }
 
     .page-container {

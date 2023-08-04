@@ -22,16 +22,16 @@
     font-size: 1.2rem;
     font-weight: 700;
     cursor: pointer;
-
-    border: 3px solid #C200FF;
+    border: none;
+    border: 3px solid var(--secondary-color);
     border-radius: 0.4rem;
-    background-color: white;
-    color: #C200FF;
+    background-color: var(--overlay-0);
+    color: var(--secondary-color);
 }
 
 .LoginButton:hover {
-    background-color: #C200FF;
-    color: white;
+    background-color: var(--secondary-color);
+    color: #f2f2f2;
 }
 
 @media only screen and (min-width: 1200px) {
