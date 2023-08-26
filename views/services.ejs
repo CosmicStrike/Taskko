@@ -19,6 +19,8 @@
             <div class="page-container">
                 <%- include('./components/navbar.ejs') %>
                     <main>
+            <% if(auth){ %>
+
                         <h2 class="page-name">Services</h2>
                         <hr class="page-name-separator">
                         <div class="service-container">
@@ -71,7 +73,9 @@
                                 </table>
                             </div>
                         </div>
-
+                <% }else { %>
+                    <%- include('./components/index.ejs') %>
+                        <% } %>
                     </main>
             </div>
     </body>

@@ -2,7 +2,7 @@ import express from 'express';
 import path from 'path';
 import logger from 'morgan';
 import { fileURLToPath } from 'url';
-import MainRouter from './routes/views/main.js';
+import ViewRouter from './routes/views/user.js';
 import { InitializeDatabase } from './database.js';
 // import LoginRouter from './routes/api/login.js';
 // import UserRouter from './routes/api/user.js';
@@ -24,9 +24,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // app.use('/api/login', LoginRouter);
 // app.use('/api/user', UserRouter);
-app.use('/', MainRouter);
+app.use('/', ViewRouter);
 
 app.use(express.static(__dirname + '/public'));
+
+// Initialize the database
 InitializeDatabase();
 
 
