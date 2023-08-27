@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
-import config from 'dotenv';
+import { config } from 'dotenv';
 import { v4 as uuidv4 } from 'uuid';
-import pool from './database.js';
+import pool from '../database.js';
 
 const { sign, verify } = jwt
 config()
@@ -60,6 +60,6 @@ export async function GenerateRefreshToken(uid) {
     }
 }
 
-export default async function auth(req, res, next) {
+export default async function token(req, res, next) {
 
 }

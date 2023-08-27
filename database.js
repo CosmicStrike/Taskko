@@ -1,6 +1,5 @@
 import mysql from 'mysql2/promise';
 import { config } from 'dotenv';
-import { v4 as uuidv4 } from 'uuid';
 
 config();
 
@@ -28,9 +27,9 @@ export async function InitializeDatabase() {
         // email type = 0 for primary and 1 for secondary
         // confirmed = 1 for confirmation and 0 fro not comfirmation
         await conn.query(`CREATE TABLE IF NOT EXISTS emails(
-                    uid varchar(50) NOT NULL UNIQUE,
+                    uid varchar(50) NOT NULL,
                     email varchar(60) NOT NULL UNIQUE,
-                    task_category varchar(10) NOT NULL,
+                    task_category varchar(10) NOT NULL DEFAULT 'NULL',
                     confirmed TINYINT NOT NULL DEFAULT 0,
                     type TINYINT NOT NULL DEFAULT 0,
 
@@ -53,6 +52,8 @@ export async function InitializeDatabase() {
 
         console.log(`Successfully initialized the database '${process.env.DB_NAME}'...`);
         conn.release();
+
+        console.log(await InsertUser('5', 'Shubham', 'ko', 'email10'));
     }
     catch (err) {
         console.log("Error in connecting to database");
@@ -80,6 +81,39 @@ export async function FindUserByName(uname) {
     catch (err) {
         console.log("Failed to get user by name");
         return null;
+    }
+}
+
+export async function FindUserByEmail(email) {
+    try {
+        const [rows] = await pool.execute('SELECT * FROM user WHERE uid=(SELECT uid FROM emails WHERE email=?)', [email]);
+        if (rows.length === 0) return false;
+        else return rows[0];
+    }
+    catch (err) {
+        console.log("Failed to get user by email");
+        return null;
+    }
+}
+
+export async function InsertUser(uid, uname, password, email) {
+    let conn;
+    try {
+        conn = await pool.getConnection();
+        await conn.beginTransaction();
+        await conn.execute('INSERT INTO user (uid, username, password) Values (?,?,?);', [uid, uname, password]);
+        await conn.execute('INSERT INTO emails (uid, email) VALUES (?,?);', [uid, email]);
+        conn.commit();
+        return true;
+    }
+    catch (err) {
+        console.log("\nFailed to create new user account for user", uname);
+        console.log(err);
+        conn.rollback();
+        return false;
+    }
+    finally {
+        conn.release();
     }
 }
 export default pool;
