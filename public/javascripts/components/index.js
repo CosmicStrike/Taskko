@@ -3,6 +3,10 @@ function Index() {
 
     document.getElementById('get-started').addEventListener('click', (e) => {
         login.showModal();
+        let errs = login.getElementsByClassName('error-message');
+        for (let j = 0; j < errs.length; j++) {
+            errs[j].innerHTML = "";
+        }
     });
 }
 

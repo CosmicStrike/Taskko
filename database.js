@@ -18,7 +18,7 @@ export async function InitializeDatabase() {
         await conn.query(`CREATE TABLE IF NOT EXISTS user(
                     uid varchar(50) PRIMARY KEY NOT NULL UNIQUE, 
                     username varchar(20) NOT NULL UNIQUE, 
-                    password varchar(50) NOT NULL,
+                    password varchar(100) NOT NULL,
                     created_on DATETIME NOT NULL DEFAULT now(),
                     verified TINYINT NOT NULL DEFAULT 0,
                     refresh varchar(50) UNIQUE
@@ -27,13 +27,14 @@ export async function InitializeDatabase() {
         // email type = 0 for primary and 1 for secondary
         // confirmed = 1 for confirmation and 0 fro not comfirmation
         await conn.query(`CREATE TABLE IF NOT EXISTS emails(
+                    eid varchar(100) NOT NULL UNIQUE PRIMARY KEY,
                     uid varchar(50) NOT NULL,
                     email varchar(60) NOT NULL UNIQUE,
                     task_category varchar(10) NOT NULL DEFAULT 'NULL',
                     confirmed TINYINT NOT NULL DEFAULT 0,
                     type TINYINT NOT NULL DEFAULT 0,
 
-                    FOREIGN KEY (uid) REFERENCES user(uid)
+                    FOREIGN KEY (uid) REFERENCES user(uid) ON DELETE CASCADE
         )`)
 
         await conn.query(`CREATE TABLE IF NOT EXISTS task(
@@ -47,13 +48,13 @@ export async function InitializeDatabase() {
                     reminder TINYINT NOT NULL DEFAULT 0,
 
                     PRIMARY KEY (tid),
-                    FOREIGN KEY (uid) REFERENCES user(uid)
+                    FOREIGN KEY (uid) REFERENCES user(uid) ON DELETE CASCADE
         )`)
 
         console.log(`Successfully initialized the database '${process.env.DB_NAME}'...`);
         conn.release();
 
-        console.log(await InsertUser('5', 'Shubham', 'ko', 'email10'));
+        // console.log(await InsertUser('1', 'hubham', 'ko', 'email10'));
     }
     catch (err) {
         console.log("Error in connecting to database");
@@ -96,18 +97,51 @@ export async function FindUserByEmail(email) {
     }
 }
 
-export async function InsertUser(uid, uname, password, email) {
+export async function FindEmailById(eid) {
+    try {
+        const [rows] = await pool.execute('SELECT * FROM emails WHERE eid=?', [eid]);
+        if (rows.length === 0) return false;
+        else return rows[0];
+    }
+    catch (err) {
+        console.log("Failed to get email by id");
+        return null;
+    }
+}
+
+export async function InsertUser(uid, uname, password, eid, email) {
     let conn;
     try {
+        console.log(uid, uname, password, eid, email)
         conn = await pool.getConnection();
         await conn.beginTransaction();
         await conn.execute('INSERT INTO user (uid, username, password) Values (?,?,?);', [uid, uname, password]);
-        await conn.execute('INSERT INTO emails (uid, email) VALUES (?,?);', [uid, email]);
+        await conn.execute('INSERT INTO emails (eid, uid, email) VALUES (?, ?,?);', [eid, uid, email]);
         conn.commit();
         return true;
     }
     catch (err) {
         console.log("\nFailed to create new user account for user", uname);
+        console.log(err);
+        conn.rollback();
+        return false;
+    }
+    finally {
+        conn.release();
+    }
+}
+
+export async function DeleteUserById(uid) {
+    let conn;
+    try {
+        conn = await pool.getConnection();
+        await conn.beginTransaction();
+        await conn.execute("DELETE FROM user where uid=?", [uid]);
+        conn.commit();
+        return true;
+    }
+    catch (err) {
+        console.log('\nFailed to delete the existing user having id', uid);
         console.log(err);
         conn.rollback();
         return false;

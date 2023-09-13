@@ -20,14 +20,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/api/auth', AuthRouter);
-app.use('/', ViewRouter);
-
 app.use(express.static(__dirname + '/public'));
 
 // Initialize the database
 InitializeDatabase();
 
+app.use('/api/auth', AuthRouter);
+app.use('/', ViewRouter);
 
 
 export default app;

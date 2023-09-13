@@ -8,12 +8,20 @@ function Login() {
         loginForm.reset();
         login.close();
         signup.showModal();
+        let errs = signup.getElementsByClassName('error-message');
+        for (let j = 0; j < errs.length; j++) {
+            errs[j].innerHTML = "";
+        }
     })
 
     document.getElementById('forgotPassword-button').addEventListener('click', (e) => {
         loginForm.reset();
         login.close();
         forgotPassword.showModal();
+        let errs = forgotPassword.getElementsByClassName('error-message');
+        for (let j = 0; j < errs.length; j++) {
+            errs[j].innerHTML = "";
+        }
     })
 
     document.getElementById('closeLogin').addEventListener('click', (e) => {

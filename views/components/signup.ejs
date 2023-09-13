@@ -4,21 +4,23 @@
     <form id="signup" class="login-form">
 
         <input class="login-field" type="text" placeholder="Username" name="username">
-        <p class="error-message"></p>
+        <p class="error-message error-signup"></p>
 
         <input class="login-field" type="email" placeholder="email" name="email">
-        <p class="error-message"></p>
+        <p class="error-message error-signup"></p>
 
         <input class="login-field" type="password" placeholder="Password" name="password">
-        <span class="error-message"></span>
+        <p class="error-message error-signup"></p>
 
-        <input class="login-field" type="password" placeholder="Re-Enter Password" name="confirm-password">
-        <span class="error-message"></span>
+        <input class="login-field signup-password" type="password" placeholder="Re-Enter Password"
+            name="confirm-password">
+        <p class="error-message error-signup"></p>
 
-        <input class="login-button" type="submit" value="Sign Up">
+        <input id="signup-submit" class="login-button" type="submit" value="Sign Up">
 
         <button type="button" style="width: 20%;" class="login-footer back">
             Back
         </button>
     </form>
 </dialog>
+<script src="/javascripts/components/signup.js"></script>
