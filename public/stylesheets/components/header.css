@@ -51,6 +51,7 @@ header {
 
     flex-grow: 1;
     text-align: center;
+    text-decoration: none;
 }
 
 .hide {

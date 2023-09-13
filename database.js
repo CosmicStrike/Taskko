@@ -131,6 +131,46 @@ export async function InsertUser(uid, uname, password, eid, email) {
     }
 }
 
+export async function ConfirmEmailById(eid) {
+    let conn;
+    try {
+        conn = await pool.getConnection();
+        await conn.execute('UPDATE emails SET confirmed=1 WHERE eid=?', [eid]);
+        conn.commit();
+        return true;
+    }
+    catch (err) {
+        conn.rollback();
+        console.log("\nFailed to UPDATE the existing email having eid as ", eid);
+        console.log(err);
+        return false;
+    }
+    finally {
+        conn.release();
+    }
+}
+
+
+export async function VerifyUserById(uid) {
+    let conn;
+    try {
+        conn = await pool.getConnection();
+        await conn.execute('UPDATE user SET verified=1 WHERE uid=?', [uid]);
+        conn.commit();
+        return true;
+    }
+    catch (err) {
+        conn.rollback();
+        console.log("\nFailed to Verify the user having eid as ", uid);
+        console.log(err);
+        return false;
+    }
+    finally {
+        conn.release();
+    }
+}
+
+
 export async function DeleteUserById(uid) {
     let conn;
     try {
