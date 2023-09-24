@@ -7,12 +7,13 @@
     <form id="login" class="login-form">
 
         <input class="login-field" type="text" placeholder="Username" name="username">
-        <p class="error-message"></p>
+        <p class="error-message error-login"></p>
 
         <input class="login-field" type="password" placeholder="Password" name="password">
-        <span class="error-message"></span>
+        <p class="error-message error-login"></p>
 
-        <input class="login-button" type="submit" value="Login">
+        <p class="sMessage"></p>
+        <input id="login-submit" class="login-button" type="submit" value="Login">
         <div class="login-footer">
             <button type="button" id="forgotPassword-button"
                 style="border:none; background-color: inherit; cursor: pointer; font-size: 1.1rem;">Forgot

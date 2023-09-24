@@ -39,7 +39,9 @@ export async function GenerateRefreshToken(uid) {
         // We will generate new refresh id which is not present in database
         let temp_id = uuidv4();
         while ([await pool.execute("SELECT refresh from user where refresh=?;", [temp_id])][0][0].length) temp_id = uuidv4();
-
+        
+        // Set the refresh token 
+        await pool.execute('UPDATE user SET refresh=? WHERE uid=?', [temp_id, uid]);
         return sign(
             {
                 uid: uid,

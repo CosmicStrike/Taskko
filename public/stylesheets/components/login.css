@@ -70,7 +70,7 @@ dialog span {
 .login-button {
     width: 9rem;
     height: 2.2rem;
-    margin-bottom: 12%;
+    margin-bottom: 6%;
     flex-shrink: 0;
 
     background-color: var(--secondary-color);
@@ -96,6 +96,14 @@ dialog span {
     font-size: 1rem;
     padding: 0rem 0.2rem;
     font-weight: 500;
+}
+
+.sMessage {
+    margin-bottom: 2%;
+    padding: 2%;
+    text-align: center;
+    font-weight: bold;
+    color: rgb(239, 76, 0);
 }
 
 

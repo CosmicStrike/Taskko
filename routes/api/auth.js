@@ -1,6 +1,6 @@
-import token from '../../middlewares/token.js'
+import token, { GenerateAccessToken, GenerateRefreshToken } from '../../middlewares/token.js'
 import pool, { FindUserByName, FindUserByEmail, InsertUser, DeleteUserById } from '../../database.js';
-import { config } from 'dotenv';
+import { config, parse } from 'dotenv';
 import { v4 as uuidv4 } from 'uuid';
 import * as argon2 from 'argon2';
 import { RandomString, SendEmail } from '../../utils.js';
@@ -14,18 +14,32 @@ const regexPassword = /[\w@#$=&%`~;,/\-\*]{6,}/
 const regexEmail = /\b[A-Za-z0-9_.+-]+@[a-zA-Z0-9]+\.[a-zA-Z.]+\b/
 
 
-AuthRouter.get('/confirm', (req, res) => {
+AuthRouter.put('/login', async (req, res) => {
     try {
-        console.log(req.query.eid);
+        console.log(req.body);
+        const uname = req.body.uname;
+        const passwd = req.body.passwd;
+        if (!regexUsername.test(uname)) return res.status(400).json({ success: false, message: "Username contains restricted characters" });
+        if (!regexPassword.test(passwd)) return res.status(400).json({ success: false, message: "Password contains restricted characters" });
+
+        const user = await FindUserByName(uname);
+        if (!user) return res.status(400).json({ success: false, message: "Invalid Username or Password" });
+
+        if (!user.verified) return res.status(400).json({ success: false, message: "Primary email has not verified" });
+
+        if (!await argon2.verify(user.password, passwd)) return res.status(400).json({ success: false, message: "Invalid Username or Password" });
+
+        // Generate the session cookies
+        const accessCookie = await GenerateAccessToken(user.uid);
+        const refreshCookie = await GenerateRefreshToken(user.uid);
+        res.setHeader('Set-Cookie', `${process.env.ACCESS_COOKIE}=${accessCookie}; Secure; HttpOnly; Path=/; SameSite=Strict; Expires=${new Date(new Date().getTime() + parseInt(process.env.ACCESS_COOKIE_EXPIRE))};`);
+        res.setHeader('Set-Cookie', `${process.env.REFRESH_COOKIE}=${refreshCookie}; Secure; HttpOnly; Path='; SameSite=Strict; Expires=${new Date(new Date().getTime() + parseInt(process.env.REFRESH_COOKIE_EXPIRE))};`);
+        return res.status(200).json({ success: true, message: 'Successful login' });
     }
     catch (err) {
         console.log(err);
         return res.status(400).json({ success: false, message: "Failed to process the request" });
     }
-});
-
-AuthRouter.put('/login', (req, res) => {
-
 });
 
 AuthRouter.post('/register', async (req, res) => {
@@ -47,10 +61,10 @@ AuthRouter.post('/register', async (req, res) => {
 
         //Verify Email Pattern
         if (!regexEmail.test(email)) return res.status(400).json({ success: false, message: 'Email pattern is invalid' });
-
         //Does username already exists
-        if (await FindUserByName(uname)) return res.status(400).json({ success: false, message: 'Username already exists' });
 
+        if (await FindUserByName(uname)) return res.status(400).json({ success: false, message: 'Username already exists' });
+        
         //Does email already exists
         if (await FindUserByEmail(email)) return res.status(400).json({ success: false, message: 'Email already exists' });
 
